@@ -6,12 +6,12 @@ buttons.forEach((item) => {
     if (item.id == "clear") {
       display.innerText = "";
     } else if (item.id == "backspace") {
-      let display = display.innerText.toString();
-      display.innerText = String.substr(0, string.length - 1);
-    } else if (item.id != "" && item.id == "equal") {
+      let string = display.innerText.toString();
+      display.innerText = string.substr(0, string.length - 1);
+    } else if (display.innerText != "" && item.id == "equal") {
       display.innerText = eval(display.innerText);
-    } else if ((item.id == "") & (item.id == "equal")) {
-      display.innerHTML = "Empty!";
+    } else if (display.innerText == "" && item.id == "equal") {
+      display.innerText = "Empty!";
       setTimeout(() => (display.innerText = ""), 2000);
     } else {
       display.innerText += item.id;
